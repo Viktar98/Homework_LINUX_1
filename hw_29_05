@@ -1,0 +1,19 @@
+#!/bin/bash
+
+for run in {1..10}
+	do
+	date +“%H:%M:%S”
+	ps -ef | wc -l
+#	sleep 5
+	done
+
+	lscpu >> /opt/280323_morning/Viktar_Chumachenka/info.txt
+
+	cat /etc/os-release | head -1 | sed 's/NAME="//' | sed 's/"//' >> /opt/280323_morning/Viktar_Chumachenka/info.txt
+
+	mkdir -p /opt/280323_morning/Viktar_Chumachenka/texts/
+
+	for file in {50..100}
+	do
+	touch /opt/280323_morning/Viktar_Chumachenka/texts/$file.txt
+	done
